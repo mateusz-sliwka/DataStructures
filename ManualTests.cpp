@@ -45,7 +45,7 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.addToTheBeginning(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 2:
                 cout << "Podaj wartosc elementu: ";
@@ -53,7 +53,7 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.addToTheEnd(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
 
                 break;
             case 3:
@@ -64,21 +64,21 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.addOnPosition(value, index);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 4:
                 cout << "Procedura rozpoczeta. Trwa usuwanie pierwszego elementu\n";
                 timer.timerStart();
                 array.removeFirstOne();
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 5:
                 cout << "Procedura rozpoczeta. Trwa usuwanie ostatniego elementu\n";
                 timer.timerStart();
                 array.removeLastOne();
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 6:
                 cout << "Podaj pozycje z ktorej chcesz usunac element: ";
@@ -86,7 +86,7 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.removeElement(index);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 7:
                 cout << "Podaj wartosc szukanego elementu: ";
@@ -94,13 +94,13 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.checkIfExist(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 8:
                 timer.timerStart();
                 array.printArray();
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 0:
                 break;
@@ -148,7 +148,7 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.addToTheBeginning(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 2:
                 cout << "Podaj wartosc elementu: ";
@@ -156,7 +156,7 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.addToTheEnd(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
 
                 break;
             case 3:
@@ -167,21 +167,21 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.addOnPosition(value, index);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 4:
                 cout << "Procedura rozpoczeta. Trwa usuwanie pierwszego elementu\n";
                 timer.timerStart();
                 list.removeFirstOne();
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 5:
                 cout << "Procedura rozpoczeta. Trwa usuwanie ostatniego elementu\n";
                 timer.timerStart();
                 list.removeLastOne();
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 6:
                 cout << "Podaj pozycje z ktorej chcesz usunac element: ";
@@ -189,7 +189,7 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.removeElement(index);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 7:
                 cout << "Podaj wartosc szukanego elementu: ";
@@ -197,13 +197,13 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.checkIfExist(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 8:
                 timer.timerStart();
                 list.printList();
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 0:
                 break;
@@ -246,7 +246,7 @@ void ManualTests::testHeap() {
                 timer.timerStart();
                 heap.add(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 2:
                 cout << "Podaj wartosc do usuniecia: ";
@@ -254,7 +254,7 @@ void ManualTests::testHeap() {
                 timer.timerStart();
                 heap.remove(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 3:
                 cout << "Podaj wartosc do wyszukania: ";
@@ -262,13 +262,13 @@ void ManualTests::testHeap() {
                 timer.timerStart();
                 heap.checkIfExist(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 4:
                 timer.timerStart();
                 heap.printHeap();
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 0:
                 break;
@@ -310,7 +310,7 @@ void ManualTests::testTree() {
                 timer.timerStart();
                 tree.add(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 2:
                 cout << "Podaj wartosc do usuniecia: ";
@@ -318,7 +318,7 @@ void ManualTests::testTree() {
                 timer.timerStart();
                 tree.remove(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 3:
                 cout << "Podaj wartosc do wyszukania: ";
@@ -326,13 +326,13 @@ void ManualTests::testTree() {
                 timer.timerStart();
                 tree.checkIfExists(value);
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 4:
                 timer.timerStart();
                 tree.print();
                 timer.timerStop();
-                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ns\n";
                 break;
             case 0:
                 break;

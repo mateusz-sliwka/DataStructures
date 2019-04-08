@@ -209,7 +209,7 @@ void AutomaticTests::testArray() {
                 timer.timerStart();
                 array.printArray();
                 timer.timerStop();
-                fileOut << timer.execTime() << endl;
+                fileOut << timer.execTime() << endl;    fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 0:
@@ -427,7 +427,7 @@ void AutomaticTests::testList() {
                 timer.timerStart();
                 list.printList();
                 timer.timerStop();
-                fileOut << timer.execTime() << endl;
+                fileOut << timer.execTime() << endl;    fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 0:
@@ -491,12 +491,14 @@ void AutomaticTests::testHeap() {
                 }
                 fileOut << suma;
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
+                fileIn.close();
                 fileOut.close();
                 break;
             case 2:
                 suma = 0;
                 fileIn.clear();
                 fileIn.seekg(0,ios::beg);
+                heap.clean();
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
@@ -518,7 +520,9 @@ void AutomaticTests::testHeap() {
             case 3:
                 suma = 0;
                 fileIn.clear();
+
                 fileIn.seekg(0,ios::beg);
+                heap.clean();
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
@@ -535,9 +539,9 @@ void AutomaticTests::testHeap() {
                 fileOut.close();
                 break;
             case 4:
-                heap.clean();
                 fileIn.clear();
                 fileIn.seekg(0,ios::beg);
+                heap.clean();
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
@@ -547,7 +551,7 @@ void AutomaticTests::testHeap() {
                 timer.timerStop();
                 fileOut << timer.execTime() << endl;
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
-                fileOut.close();
+                fileOut.close();    fileIn.close();
             case 0:
                 break;
             default:
@@ -668,7 +672,7 @@ void AutomaticTests::testTree() {
                 timer.timerStop();
                 fileOut << timer.execTime() << endl;
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
-                fileOut.close();
+                fileOut.close();    fileIn.close();
             case 0:
                 break;
             default:
