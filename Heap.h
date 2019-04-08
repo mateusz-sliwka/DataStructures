@@ -24,7 +24,7 @@ public:
     void remove(int);
 
     bool checkIfExist(int);
-
+    bool checkIfExist2(int);
     void printHeap();
 
 

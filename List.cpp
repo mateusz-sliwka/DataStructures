@@ -69,10 +69,65 @@ void List::addToTheEnd(int value) {
     //Zwiększenie listSizeu listy z racji dodanego elementu
     listSize++;
 }
+void List::removeElement(int index) {
 
+
+    if (index < 0 || index > listSize) {
+        cout << "W liście nie istnieje   index [" << index << "]" << endl;
+        return;
+    }
+    //Sprawdź czy wybrana   index jest pierwszą
+    if (index == 0) {
+        removeFirstOne();
+        return;
+    }
+
+    //Sprawdź czy wybrana   index jest ostatnią
+    if (index == listSize - 1) {
+        removeLastOne();
+        return;
+    }
+
+    //Sprawdź w której połowie listy znajduje się wybrany element
+    if (index < listSize / 2) {
+
+        //Przypisz za current element first
+        currentElement = firstElement;
+
+        //Przesuń wszyskie elementy o jeden dalej
+        for (int i = 1; i < index ; ++i) {
+            currentElement = currentElement->next;
+        }
+
+    } else {
+
+        //Przypisz za current element ostatni
+        currentElement = lastElement;
+
+        //Przesuń wszystkie elementy o jedną pozycję wstecz
+        for (int i = 0; i < listSize - index ; ++i) {
+            currentElement = currentElement->previous;
+        }
+
+    }
+
+    //Stwórz new element listy z podanymi parametrami
+    ListElement *newListElement = currentElement->next;
+
+    //przypisz new element w odpowiednim miejscu tablicy
+    currentElement->next = newListElement->next;
+    currentElement->next->previous = newListElement;
+
+    delete[]newListElement;
+
+    //Zmniejsz listSize listy
+    listSize--;
+
+}
 void List::addOnPosition(int value, int index) {
     if(index==listSize){
         List::addToTheEnd(value);
+        return;
     }
     //Sprawdź czy w liście istnieje index podana przez użytkownika
     if (index < 0 || index > listSize) {
@@ -85,15 +140,9 @@ void List::addOnPosition(int value, int index) {
         return;
     }
 
-    //Sprawdź czy wybrana index jest ostatnią
-    if (index == listSize - 1) {
-        addToTheEnd(value);
-        return;
-    }
 
     //Sprawdź w której połowie listy znajduje się wybrany element
     if (index < listSize / 2) { //liczone od indeksu zerowego
-cout<<"tu"<<endl;
         //Przypisz za current element first
         currentElement = firstElement;
 
@@ -167,61 +216,7 @@ void List::removeLastOne() {
 
 }
 
-void List::removeElement(int index) {
 
-
-    if (index < 0 || index > listSize) {
-        cout << "W liście nie istnieje   index [" << index << "]" << endl;
-        return;
-    }
-    //Sprawdź czy wybrana   index jest pierwszą
-    if (index == 0) {
-        removeFirstOne();
-        return;
-    }
-
-    //Sprawdź czy wybrana   index jest ostatnią
-    if (index == listSize - 1) {
-        removeLastOne();
-        return;
-    }
-
-    //Sprawdź w której połowie listy znajduje się wybrany element
-    if (index < listSize / 2) {
-
-        //Przypisz za current element first
-        currentElement = firstElement;
-
-        //Przesuń wszyskie elementy o jeden dalej
-        for (int i = 1; i < index - 1; ++i) {
-            currentElement = currentElement->next;
-        }
-
-    } else {
-
-        //Przypisz za current element ostatni
-        currentElement = lastElement->previous;
-
-        //Przesuń wszystkie elementy o jedną pozycję wstecz
-        for (int i = 0; i < listSize - index - 1; ++i) {
-            currentElement = currentElement->previous;
-        }
-
-    }
-
-    //Stwórz new element listy z podanymi parametrami
-    ListElement *newListElement = currentElement->next;
-
-    //przypisz new element w odpowiednim miejscu tablicy
-    currentElement->next = newListElement->next;
-    currentElement->next->previous = newListElement;
-
-    delete[]newListElement;
-
-    //Zmniejsz listSize listy
-    listSize--;
-
-}
 
 bool List::checkIfExist(int value) {
     //Sprawdzenie czy lista nie jest pusta

@@ -20,6 +20,7 @@ void ManualTests::testArray() {
     bool displayArray;
     Timer timer;
     Array array;
+    int ilosccyfr=0,maxcyfra=0;
     int x, value, index;
     while (x != 0) {
         cout << "\n=== Wybierz czynnosc ===\n";
@@ -31,6 +32,7 @@ void ManualTests::testArray() {
         cout << "6. Usun element tablicy na danej pozycji\n";
         cout << "7. Wyszukaj element w tablicy\n";
         cout << "8. Pokaz zawartosc tablicy\n";
+        cout<<"9. Dodaj dana ilosc losowych cyfr\n";
         cout << "0. Wyjscie\n";
         cout << "========================\n";
         cout << "Wybieram opcje: ";
@@ -42,7 +44,7 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.addToTheBeginning(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 2:
                 cout << "Podaj wartosc elementu: ";
@@ -50,7 +52,7 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.addToTheEnd(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
 
                 break;
             case 3:
@@ -61,21 +63,21 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.addOnPosition(value, index);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 4:
                 cout << "Procedura rozpoczeta. Trwa usuwanie pierwszego elementu\n";
                 timer.timerStart();
                 array.removeFirstOne();
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 5:
                 cout << "Procedura rozpoczeta. Trwa usuwanie ostatniego elementu\n";
                 timer.timerStart();
                 array.removeLastOne();
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 6:
                 cout << "Podaj pozycje z ktorej chcesz usunac element: ";
@@ -83,7 +85,7 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.removeElement(index);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 7:
                 cout << "Podaj wartosc szukanego elementu: ";
@@ -91,15 +93,23 @@ void ManualTests::testArray() {
                 timer.timerStart();
                 array.checkIfExist(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 8:
                 timer.timerStart();
                 array.printArray();
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 0:
+                break;
+            case 9:
+                cout<<"Ile cyfr chcesz dodac? ";
+                cin>>ilosccyfr;
+                cout<<"Jaka maksymalna cyfra? ";
+                cin>>maxcyfra;
+                for(int i=0;i<ilosccyfr;i++)
+                    array.addToTheBeginning(rand()%maxcyfra);
                 break;
             default:
                 printError("Wybrales zla opcje. Sprobuj ponownie.");
@@ -111,6 +121,7 @@ void ManualTests::testArray() {
 void ManualTests::testList() {
     bool displayArray;
     Timer timer;
+    int ilosccyfr,maxcyfra;
     List list;
     int x, value, index;
     while (x != 0) {
@@ -123,6 +134,7 @@ void ManualTests::testList() {
         cout << "6. Usun element listy na danej pozycji\n";
         cout << "7. Wyszukaj element w listy\n";
         cout << "8. Pokaz zawartosc listy\n";
+        cout<<"9. Dodaj dana ilosc losowych cyfr\n";
         cout << "0. Wyjscie\n";
         cout << "========================\n";
         cout << "Wybieram opcje: ";
@@ -134,7 +146,7 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.addToTheBeginning(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 2:
                 cout << "Podaj wartosc elementu: ";
@@ -142,7 +154,7 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.addToTheEnd(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
 
                 break;
             case 3:
@@ -153,21 +165,21 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.addOnPosition(value, index);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 4:
                 cout << "Procedura rozpoczeta. Trwa usuwanie pierwszego elementu\n";
                 timer.timerStart();
                 list.removeFirstOne();
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 5:
                 cout << "Procedura rozpoczeta. Trwa usuwanie ostatniego elementu\n";
                 timer.timerStart();
                 list.removeLastOne();
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 6:
                 cout << "Podaj pozycje z ktorej chcesz usunac element: ";
@@ -175,7 +187,7 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.removeElement(index);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 7:
                 cout << "Podaj wartosc szukanego elementu: ";
@@ -183,15 +195,23 @@ void ManualTests::testList() {
                 timer.timerStart();
                 list.checkIfExist(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 8:
                 timer.timerStart();
                 list.printList();
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 0:
+                break;
+            case 9:
+                cout<<"Ile cyfr chcesz dodac? ";
+                cin>>ilosccyfr;
+                cout<<"Jaka maksymalna cyfra? ";
+                cin>>maxcyfra;
+                for(int i=0;i<ilosccyfr;i++)
+                    list.addToTheBeginning(rand()%maxcyfra);
                 break;
             default:
                 printError("Wybrales zla opcje. Sprobuj ponownie.");
@@ -202,6 +222,7 @@ void ManualTests::testList() {
 
 void ManualTests::testHeap() {
     Timer timer;
+    int ilosccyfr,maxcyfra;
     Heap heap;
     int x = 1, value;
     while (x != 0) {
@@ -210,6 +231,7 @@ void ManualTests::testHeap() {
         cout << "2. Usun element z kopca\n";
         cout << "3. Wyszukaj wartosc w kopcu\n";
         cout << "4. Wyswietl kopiec\n";
+        cout<<"5. Dodaj dana ilosc losowych cyfr\n";
         cout << "0. Wyjscie\n";
         cout << "========================\n";
         cout << "Wybieram opcje: ";
@@ -221,7 +243,7 @@ void ManualTests::testHeap() {
                 timer.timerStart();
                 heap.add(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 2:
                 cout << "Podaj wartosc do usuniecia: ";
@@ -229,7 +251,7 @@ void ManualTests::testHeap() {
                 timer.timerStart();
                 heap.remove(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 3:
                 cout << "Podaj wartosc do wyszukania: ";
@@ -237,15 +259,23 @@ void ManualTests::testHeap() {
                 timer.timerStart();
                 heap.checkIfExist(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 4:
                 timer.timerStart();
                 heap.printHeap();
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 0:
+                break;
+            case 5:
+                cout<<"Ile cyfr chcesz dodac? ";
+                cin>>ilosccyfr;
+                cout<<"Jaka maksymalna cyfra? ";
+                cin>>maxcyfra;
+                for(int i=0;i<ilosccyfr;i++)
+                    heap.add(rand()%maxcyfra);
                 break;
             default:
                 printError("Wybrales zla opcje. Sprobuj ponownie.");
@@ -255,6 +285,7 @@ void ManualTests::testHeap() {
 
 void ManualTests::testTree() {
     Timer timer;
+    int ilosccyfr,maxcyfra;
     Tree tree;
     int x = 1, value;
     while (x != 0) {
@@ -263,6 +294,7 @@ void ManualTests::testTree() {
         cout << "2. Usun element z drzewa\n";
         cout << "3. Wyszukaj wartosc w drzewie\n";
         cout << "4. Wyswietl drzewo\n";
+        cout<<"5. Dodaj dana ilosc losowych cyfr\n";
         cout << "0. Wyjscie\n";
         cout << "========================\n";
         cout << "Wybieram opcje: ";
@@ -274,7 +306,7 @@ void ManualTests::testTree() {
                 timer.timerStart();
                 tree.add(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 2:
                 cout << "Podaj wartosc do usuniecia: ";
@@ -282,7 +314,7 @@ void ManualTests::testTree() {
                 timer.timerStart();
                 tree.remove(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 3:
                 cout << "Podaj wartosc do wyszukania: ";
@@ -290,15 +322,23 @@ void ManualTests::testTree() {
                 timer.timerStart();
                 tree.checkIfExists(value);
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 4:
                 timer.timerStart();
                 tree.print();
                 timer.timerStop();
-                cout << "Procedura trwała: " << timer.execTime() << "ms\n";
+                cout << "Procedura trwala: " << timer.execTime() << "ms\n";
                 break;
             case 0:
+                break;
+            case 5:
+                cout<<"Ile cyfr chcesz dodac? ";
+                cin>>ilosccyfr;
+                cout<<"Jaka maksymalna cyfra? ";
+                cin>>maxcyfra;
+                for(int i=0;i<ilosccyfr;i++)
+                    tree.add(rand()%maxcyfra);
                 break;
             default:
                 printError("Wybrales zla opcje. Sprobuj ponownie.");

@@ -28,7 +28,7 @@ void Heap::clean() {
 
 void Heap::add(int value) {
     //Wykluczamy mozliwosc zduplikowania wartosci w kopcu
-    cout << value << endl;
+  if(!Heap::checkIfExist2(value)){
     //Tworzenie nowej tablicy o wiekszym rozmiarze
     int *newArray = new int[size + 1];
     //Przepisanie danych do nowej tablicy
@@ -42,7 +42,7 @@ void Heap::add(int value) {
     array = newArray;
     //Przebudowanie na kopiec
     Heap::rebuildHeap();
-    size++;
+    size++;}
 
 }
 
@@ -53,11 +53,11 @@ void Heap::remove(int value) {
         if (array[i] == value) {
             int *newArray = new int[size - 1];
             //Przepisanie danych do nowej tablicy z pominieciem tej znalezionej
-            for (int k = 0; k < size; k++) {
-                if (k >= i)
-                    newArray[k - 1] = array[k];
-                else
-                    newArray[k] = array[k];
+            for (int k = 0; k < i; k++) {
+                newArray[k] = array[k];
+            }
+            for (int k = i+1; k < size; k++) {
+                newArray[k-1] = array[k];
             }
             //Usuwam stara tablice
             delete[] array;
@@ -85,6 +85,18 @@ bool Heap::checkIfExist(int value) {
     cout << "Wartosc nie zostala znaleziona w kopcu." << endl;
     return false;
 }
+bool Heap::checkIfExist2(int value) {
+    //Przeszukuje cala tablice kopca
+    for (int i = 0; i < size; i++)
+        //Przyrownuje wartosc elementu do value
+        if (array[i] == value) {
+
+            //Jak znalazlem to zakanczam petle
+            return true;
+        }
+
+    return false;
+}
 
 void Heap::rebuildHeap() {
     int tmp = 0;
@@ -103,10 +115,9 @@ void Heap::printHeap() {
 
 void Heap::printBT(string sp, string sn, int v) {
     string cr, cl, cp;
-    cr = cl = cp = "  ";
-    cr = "┌─";
-    cl = "└─";
-    cp[0] = '|';
+    cr = cl = cp = "  ";  cr[0] = 218; cr[1] = 196;
+    cl[0] = 192; cl[1] = 196;
+    cp[0] = 179;
 
     string s;
 
