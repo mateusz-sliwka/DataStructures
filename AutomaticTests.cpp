@@ -210,6 +210,7 @@ void AutomaticTests::testArray() {
                 array.printArray();
                 timer.timerStop();
                 fileOut << timer.execTime() << endl;
+                fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 0:
@@ -309,6 +310,7 @@ void AutomaticTests::testList() {
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
                 }
                fileIn.clear();
+                fileIn.close();
                 fileIn.seekg(0);
                  aa=list.listSize/2;
 
@@ -428,6 +430,7 @@ void AutomaticTests::testList() {
                 list.printList();
                 timer.timerStop();
                 fileOut << timer.execTime() << endl;
+                fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 0:
@@ -490,6 +493,7 @@ void AutomaticTests::testHeap() {
                     suma += timer.execTime();
                 }
                 fileOut << suma;
+                fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 fileOut.close();
                 break;
@@ -548,6 +552,7 @@ void AutomaticTests::testHeap() {
                 fileOut << timer.execTime() << endl;
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 fileOut.close();
+                fileIn.close();
             case 0:
                 break;
             default:
@@ -669,6 +674,7 @@ void AutomaticTests::testTree() {
                 fileOut << timer.execTime() << endl;
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 fileOut.close();
+                fileIn.close();
             case 0:
                 break;
             default:
