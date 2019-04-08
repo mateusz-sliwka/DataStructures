@@ -82,6 +82,7 @@ add_executable(SDiZO
         Results/Tree/show100.txt
         Results/Tree/show1k.txt
         Results/Tree/szukaj1k.txt
+        .gitignore
         Array.cpp
         Array.h
         AutomaticTests.cpp
@@ -101,3 +102,4 @@ add_executable(SDiZO
         Tree.h
         TreeElement.cpp
         TreeElement.h)
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
