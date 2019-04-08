@@ -18,6 +18,8 @@ public:
 
     ~Array();
 
+    void clean();
+
     void printError(string message);
 
     void addToTheBeginning(int value);

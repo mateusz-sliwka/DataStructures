@@ -34,6 +34,8 @@ public:
 
     void print();
 
+    void clean();
+
     void printBT(string, string, int);
 
     void printRBT(string sp, string sn, TreeElement *p);

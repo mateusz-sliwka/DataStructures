@@ -20,6 +20,11 @@ Array::~Array() {
         delete[] headPtr;
 }
 
+void Array::clean() {
+    Array::arraySize = 0;
+    Array::headPtr = NULL;
+}
+
 void Array::printError(string message) {
     cout << "[ERROR] " + message << endl;
 }
@@ -47,7 +52,7 @@ void Array::addToTheEnd(int value) {
     newHeadPtr[arraySize] = value;
     //Przepisanie starej tablicy do nowej
     for (int i = 0; i < arraySize; i++)
-        newHeadPtr[i + 1] = headPtr[i];
+        newHeadPtr[i] = headPtr[i];
     //Usunięcie starej tablicy
     delete headPtr;
     //Przypisanie nowej tablicy do wskaznika na głowę
@@ -67,9 +72,9 @@ void Array::addOnPosition(int value, int index) {
         newHeadPtr[index] = value;
         //Przepisanie danych ze starej tablicy do nowej
         for (int i = 0; i < arraySize; i++)
-            if (i == index)
+            if (i >= index)
                 newHeadPtr[i + 1] = headPtr[i];
-            else
+            else if(i<index)
                 newHeadPtr[i] = headPtr[i];
         //Usunięcie starej tablicy
         delete headPtr;

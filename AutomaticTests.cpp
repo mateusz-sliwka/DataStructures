@@ -11,6 +11,7 @@
 #include "List.h"
 #include "Heap.h"
 #include "Tree.h"
+
 using namespace std;
 
 void AutomaticTests::printError(string message) {
@@ -21,6 +22,7 @@ void AutomaticTests::testArray() {
     srand(time(NULL));
     Timer timer;
     Array array;
+    float suma = 0;
     fstream fileIn, fileOut;
     string pathIn, pathOut, lineIn1;
     int x = 1, value, index;
@@ -39,11 +41,11 @@ void AutomaticTests::testArray() {
         cout << "Wybieram opcje: ";
         cin >> x;
         cout << "Podaj sciezkie pliku zawierajacego dane wejsciowe: ";
-        cin >> pathIn;
+
         cout << "Podaj miejsce docelowe zapisu wyniku testow: ";
         cin >> pathOut;
-        fileIn.open("../Data/" + pathIn, ios::in);
-        fileOut.open("../Results/Array/"+pathOut, ios::out);
+        fileIn.open("../Data/losowe_1000.txt", ios::in);
+        fileOut.open("../Results/Array/" + pathOut, ios::out);
         if (fileIn.is_open())
             cout << "Pomyslnie otwarto plik wejsciowy" << endl;
         else {
@@ -58,32 +60,42 @@ void AutomaticTests::testArray() {
         }
         switch (x) {
             case 1:
+
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                suma = 0;
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     timer.timerStart();
                     array.addToTheBeginning(atoi(lineIn1.c_str()));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 2:
+
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                suma = 0;
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     timer.timerStart();
                     array.addToTheEnd(atoi(lineIn1.c_str()));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 3:
+
+                suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
@@ -91,12 +103,16 @@ void AutomaticTests::testArray() {
                     array.addOnPosition(atoi(lineIn1.c_str()), rand() % array.arraySize);
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciowym.\n";
                 break;
             case 4:
+
+                suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
@@ -107,12 +123,16 @@ void AutomaticTests::testArray() {
                     array.removeFirstOne();
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 5:
+
+                suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
@@ -123,29 +143,37 @@ void AutomaticTests::testArray() {
                     array.removeLastOne();
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 6:
+
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     array.addToTheBeginning(atoi(lineIn1.c_str()));
                 }
+                suma = 0;
                 while (array.arraySize != 0) {
                     timer.timerStart();
                     array.removeElement(rand() % array.arraySize);
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 7:
+
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                suma = 0;
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     array.addToTheBeginning(atoi(lineIn1.c_str()));
@@ -155,12 +183,15 @@ void AutomaticTests::testArray() {
                     array.checkIfExist(rand() % 2000000);
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 8:
+                array.clean();
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
@@ -183,6 +214,7 @@ void AutomaticTests::testArray() {
 void AutomaticTests::testList() {
     srand(time(NULL));
     Timer timer;
+    int aa=0;
     List list;
     fstream fileIn, fileOut;
     string pathIn, pathOut, lineIn1;
@@ -202,11 +234,11 @@ void AutomaticTests::testList() {
         cout << "Wybieram opcje: ";
         cin >> x;
         cout << "Podaj sciezkie pliku zawierajacego dane wejsciowe: ";
-        cin >> pathIn;
+
         cout << "Podaj miejsce docelowe zapisu wyniku testow: ";
         cin >> pathOut;
-        fileIn.open("../Data/" + pathIn, ios::in);
-        fileOut.open("../Results/List/"+pathOut, ios::out);
+        fileIn.open("../Data/losowe_1000.txt", ios::in);
+        fileOut.open("../Results/List/" + pathOut, ios::out);
         if (fileIn.is_open())
             cout << "Pomyslnie otwarto plik wejsciowy" << endl;
         else {
@@ -219,6 +251,7 @@ void AutomaticTests::testList() {
             AutomaticTests::printError("Blad odczytu pliku z danymi wyjsciowymi.");
             return;
         }
+        float suma = 0;
         switch (x) {
             case 1:
                 cout << "*** TEST AUTOMATYCZNY ***\n";
@@ -228,12 +261,16 @@ void AutomaticTests::testList() {
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
+
                 break;
             case 2:
+                suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
@@ -241,26 +278,43 @@ void AutomaticTests::testList() {
                     list.addToTheEnd(atoi(lineIn1.c_str()));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 3:
+                list.clear();
+                suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
+                    list.addToTheBeginning(atoi(lineIn1.c_str()));
+                }
+               fileIn.clear();
+                fileIn.seekg(0);
+                 aa=list.listSize/2;
+
+                while (!fileIn.eof()) {
+                    fileIn >> lineIn1;
+                    cout<<lineIn1<<endl;
                     timer.timerStart();
-                    list.addOnPosition(atoi(lineIn1.c_str()), rand() % list.listSize);
+                    list.addOnPosition(atoi(lineIn1.c_str()), rand() % (aa-2));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 4:
+                suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                list.clear();
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
@@ -270,13 +324,17 @@ void AutomaticTests::testList() {
                     list.removeFirstOne();
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 5:
+                suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                list.clear();
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
@@ -286,28 +344,37 @@ void AutomaticTests::testList() {
                     list.removeLastOne();
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 6:
+                list.clear();
+                suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
                 }
                 while (list.listSize != 0) {
+                    cout<<"1XD1";
                     timer.timerStart();
-                    list.removeElement(rand() % list.listSize);
+                    list.removeElement(rand() % (list.listSize));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                cout<<"XD";
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 7:
+                suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
@@ -318,12 +385,15 @@ void AutomaticTests::testList() {
                     list.checkIfExist(rand() % 2000000);
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 fileOut.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 8:
+                list.clean();
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
@@ -362,11 +432,11 @@ void AutomaticTests::testHeap() {
         cout << "Wybieram opcje: ";
         cin >> x;
         cout << "Podaj sciezkie pliku zawierajacego dane wejsciowe: ";
-        cin >> pathIn;
+
         cout << "Podaj miejsce docelowe zapisu wyniku testow: ";
         cin >> pathOut;
-        fileIn.open("../Data/" + pathIn, ios::in);
-        fileOut.open("../Results/Heap/"+pathOut, ios::out);
+        fileIn.open("../Data/losowe_1000.txt", ios::in);
+        fileOut.open("../Results/Heap/" + pathOut, ios::out);
         if (fileIn.is_open())
             cout << "Pomyslnie otwarto plik wejsciowy" << endl;
         else {
@@ -379,40 +449,46 @@ void AutomaticTests::testHeap() {
             AutomaticTests::printError("Blad odczytu pliku z danymi wyjsciowymi.");
             return;
         }
+        float suma = 0;
 
         switch (x) {
             case 1:
 
+                suma = 0;
                 while (!fileIn.eof()) {
-
                     fileIn >> lineIn1;
                     timer.timerStart();
                     heap.add(atoi(lineIn1.c_str()));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
-
+                fileOut << suma;
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 fileOut.close();
                 break;
             case 2:
+                suma = 0;
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
                 }
-                fileIn.open("../Data/" + pathIn, ios::in);
+                fileIn.open("../Data/losowe_1000.txt", ios::in);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     timer.timerStart();
                     heap.remove(atoi(lineIn1.c_str()));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 fileOut.close();
                 break;
             case 3:
+                suma = 0;
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
@@ -421,12 +497,15 @@ void AutomaticTests::testHeap() {
                     timer.timerStart();
                     heap.checkIfExist(rand() % 200000);
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 fileOut.close();
                 break;
             case 4:
+                heap.clean();
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
@@ -464,10 +543,10 @@ void AutomaticTests::testTree() {
         cout << "Wybieram opcje: ";
         cin >> x;
         cout << "Podaj sciezkie pliku zawierajacego dane wejsciowe: ";
-        cin >> pathIn;
+
         cout << "Podaj miejsce docelowe zapisu wyniku testow: ";
         cin >> pathOut;
-        fileIn.open("../Data/" + pathIn, ios::in);
+        fileIn.open("../Data/losowe_1000.txt", ios::in);
         fileOut.open("../Results/Tree/" + pathOut, ios::out);
         if (fileIn.is_open())
             cout << "Pomyslnie otwarto plik wejsciowy" << endl;
@@ -481,10 +560,10 @@ void AutomaticTests::testTree() {
             AutomaticTests::printError("Blad odczytu pliku z danymi wyjsciowymi.");
             return;
         }
-
+        float suma = 0;
         switch (x) {
             case 1:
-
+                suma = 0;
                 while (!fileIn.eof()) {
 
                     fileIn >> lineIn1;
@@ -492,30 +571,36 @@ void AutomaticTests::testTree() {
                     tree.add(atoi(lineIn1.c_str()));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 fileOut.close();
                 break;
             case 2:
+                suma = 0;
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     tree.add(atoi(lineIn1.c_str()));
                 }
                 fileIn.close();
-                fileIn.open("../Data/" + pathIn, ios::in);
+                fileIn.open("../Data/losowe_1000.txt", ios::in);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     timer.timerStart();
                     tree.remove(atoi(lineIn1.c_str()));
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 fileOut.close();
                 break;
             case 3:
+                suma = 0;
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     tree.add(atoi(lineIn1.c_str()));
@@ -525,12 +610,15 @@ void AutomaticTests::testTree() {
                     tree.checkIfExists(rand() % 200000);
                     timer.timerStop();
                     fileOut << timer.execTime() << endl;
+                    suma += timer.execTime();
                 }
+                fileOut << suma;
                 fileIn.close();
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 fileOut.close();
                 break;
             case 4:
+                tree.clean();
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     tree.add(atoi(lineIn1.c_str()));

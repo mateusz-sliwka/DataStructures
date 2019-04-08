@@ -21,6 +21,11 @@ Heap::~Heap() {
         delete[] array;
 }
 
+void Heap::clean() {
+    Heap::array = NULL;
+    Heap::size = 0;
+}
+
 void Heap::add(int value) {
     //Wykluczamy mozliwosc zduplikowania wartosci w kopcu
     cout << value << endl;
@@ -73,7 +78,7 @@ bool Heap::checkIfExist(int value) {
     for (int i = 0; i < size; i++)
         //Przyrownuje wartosc elementu do value
         if (array[i] == value) {
-            cout << "Wartosc znajduje sie w tablicy kopca na pozycji: " << i;
+            cout << "Wartosc znajduje sie w tablicy kopca na pozycji: " << i<<endl;
             //Jak znalazlem to zakanczam petle
             return true;
         }
@@ -99,9 +104,9 @@ void Heap::printHeap() {
 void Heap::printBT(string sp, string sn, int v) {
     string cr, cl, cp;
     cr = cl = cp = "  ";
-    cr="┌─";
-    cl="└─";
-    cp[0]='|';
+    cr = "┌─";
+    cl = "└─";
+    cp[0] = '|';
 
     string s;
 

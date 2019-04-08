@@ -30,6 +30,8 @@ public:
 
     void rebuildHeap();
 
+    void clean();
+
     int countLevel();
 
     void printBT(string, string, int);

@@ -29,8 +29,11 @@ public:
     void addToTheEnd(int value);
 
     void addOnPosition(int value, int index);
+    void clear();
 
     void removeLastOne();
+
+    void clean();
 
     void removeFirstOne();
 

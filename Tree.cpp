@@ -316,9 +316,9 @@ TreeElement *Tree::findMinimumElement(TreeElement *p) {
 void Tree::printRBT(string sp, string sn, TreeElement *p) {
     string cr, cl, cp;
     cr = cl = cp = "  ";
-    cr="┌─";
-    cl="└─";
-    cp[0]='|';
+    cr = "┌─";
+    cl = "└─";
+    cp[0] = '|';
 
     string t;
 
@@ -338,4 +338,14 @@ void Tree::printRBT(string sp, string sn, TreeElement *p) {
 
 void Tree::print() {
     printRBT("", "", root);
+}
+
+void Tree::clean() {
+    size = 0;
+    //Definiowanie strażnika
+    sentinel.color = 'B';
+    sentinel.parent = &sentinel;
+    sentinel.left = &sentinel;
+    sentinel.right = &sentinel;
+    root = &sentinel;
 }

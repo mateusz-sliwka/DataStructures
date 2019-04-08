@@ -9,7 +9,7 @@ void printError(string message) {
 }
 
 bool if_automaticTest() {
-    int x=1000;
+    int x = 1000;
     while (x != 0) {
         cout << "\n*** Wybierz rodzaj testowania ***\n";
         cout << "1. Testowanie automatyczne\n";

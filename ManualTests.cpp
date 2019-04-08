@@ -102,7 +102,7 @@ void ManualTests::testArray() {
             case 0:
                 break;
             default:
-                ManualTests::printError("Wybrałes zła opcje. Sprobuj ponownie.");
+                printError("Wybrales zla opcje. Sprobuj ponownie.");
         }
     }
 
@@ -194,7 +194,7 @@ void ManualTests::testList() {
             case 0:
                 break;
             default:
-                ManualTests::printError("Wybrałes zła opcje. Sprobuj ponownie.");
+                printError("Wybrales zla opcje. Sprobuj ponownie.");
         }
     }
 
@@ -247,6 +247,8 @@ void ManualTests::testHeap() {
                 break;
             case 0:
                 break;
+            default:
+                printError("Wybrales zla opcje. Sprobuj ponownie.");
         }
     }
 }
@@ -298,6 +300,8 @@ void ManualTests::testTree() {
                 break;
             case 0:
                 break;
+            default:
+                printError("Wybrales zla opcje. Sprobuj ponownie.");
         }
     }
 }
