@@ -115,9 +115,10 @@ void Heap::printHeap() {
 
 void Heap::printBT(string sp, string sn, int v) {
     string cr, cl, cp;
-    cr = cl = cp = "  ";  cr[0] = 218; cr[1] = 196;
-    cl[0] = 192; cl[1] = 196;
-    cp[0] = 179;
+    cr = cl = cp = "  ";
+    cr = "┌─";
+    cl = "└─";
+    cp[0] = '|';
 
     string s;
 

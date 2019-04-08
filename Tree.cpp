@@ -315,9 +315,10 @@ TreeElement *Tree::findMinimumElement(TreeElement *p) {
 
 void Tree::printRBT(string sp, string sn, TreeElement *p) {
     string cr, cl, cp;
-    cr = cl = cp = "  ";  cr[0] = 218; cr[1] = 196;
-    cl[0] = 192; cl[1] = 196;
-    cp[0] = 179;
+    cr = cl = cp = "  ";
+    cr = "┌─";
+    cl = "└─";
+    cp[0] = '|';
 
     string t;
 

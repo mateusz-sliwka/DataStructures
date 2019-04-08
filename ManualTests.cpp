@@ -20,6 +20,7 @@ void ManualTests::testArray() {
     bool displayArray;
     Timer timer;
     Array array;
+    srand(time(NULL));
     int ilosccyfr=0,maxcyfra=0;
     int x, value, index;
     while (x != 0) {
@@ -120,6 +121,7 @@ void ManualTests::testArray() {
 
 void ManualTests::testList() {
     bool displayArray;
+    srand(time(NULL));
     Timer timer;
     int ilosccyfr,maxcyfra;
     List list;
@@ -225,6 +227,7 @@ void ManualTests::testHeap() {
     int ilosccyfr,maxcyfra;
     Heap heap;
     int x = 1, value;
+    srand(time(NULL));
     while (x != 0) {
         cout << "\n=== Wybierz czynnosc ===\n";
         cout << "1. Dodaj element do kopca\n";
@@ -287,6 +290,7 @@ void ManualTests::testTree() {
     Timer timer;
     int ilosccyfr,maxcyfra;
     Tree tree;
+    srand(time(NULL));
     int x = 1, value;
     while (x != 0) {
         cout << "\n=== Wybierz czynnosc ===\n";

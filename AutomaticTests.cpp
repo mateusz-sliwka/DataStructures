@@ -60,7 +60,8 @@ void AutomaticTests::testArray() {
         }
         switch (x) {
             case 1:
-
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 suma = 0;
                 while (!fileIn.eof()) {
@@ -77,7 +78,8 @@ void AutomaticTests::testArray() {
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 2:
-
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 suma = 0;
                 while (!fileIn.eof()) {
@@ -94,7 +96,8 @@ void AutomaticTests::testArray() {
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 3:
-
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
@@ -111,7 +114,8 @@ void AutomaticTests::testArray() {
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciowym.\n";
                 break;
             case 4:
-
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
@@ -131,7 +135,8 @@ void AutomaticTests::testArray() {
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 5:
-
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
@@ -151,7 +156,8 @@ void AutomaticTests::testArray() {
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 6:
-
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
@@ -171,7 +177,8 @@ void AutomaticTests::testArray() {
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 7:
-
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 suma = 0;
                 while (!fileIn.eof()) {
@@ -191,6 +198,8 @@ void AutomaticTests::testArray() {
                 cout << "Test zakonczony. Wynik znajduje sie we wskazanym pliku wyjsciosym.\n";
                 break;
             case 8:
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 array.clean();
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
@@ -255,6 +264,8 @@ void AutomaticTests::testList() {
         switch (x) {
             case 1:
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     timer.timerStart();
@@ -272,6 +283,8 @@ void AutomaticTests::testList() {
             case 2:
                 suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     timer.timerStart();
@@ -288,6 +301,8 @@ void AutomaticTests::testList() {
             case 3:
                 list.clear();
                 suma = 0;
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
@@ -315,6 +330,8 @@ void AutomaticTests::testList() {
                 suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 list.clear();
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
@@ -335,6 +352,8 @@ void AutomaticTests::testList() {
                 suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
                 list.clear();
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
@@ -355,6 +374,8 @@ void AutomaticTests::testList() {
                 list.clear();
                 suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
@@ -376,6 +397,8 @@ void AutomaticTests::testList() {
             case 7:
                 suma = 0;
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
@@ -395,6 +418,8 @@ void AutomaticTests::testList() {
             case 8:
                 list.clean();
                 cout << "*** TEST AUTOMATYCZNY ***\n";
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     list.addToTheBeginning(atoi(lineIn1.c_str()));
@@ -453,8 +478,9 @@ void AutomaticTests::testHeap() {
 
         switch (x) {
             case 1:
-
                 suma = 0;
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     timer.timerStart();
@@ -469,6 +495,8 @@ void AutomaticTests::testHeap() {
                 break;
             case 2:
                 suma = 0;
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
@@ -489,6 +517,8 @@ void AutomaticTests::testHeap() {
                 break;
             case 3:
                 suma = 0;
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
@@ -506,6 +536,8 @@ void AutomaticTests::testHeap() {
                 break;
             case 4:
                 heap.clean();
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
@@ -564,6 +596,8 @@ void AutomaticTests::testTree() {
         switch (x) {
             case 1:
                 suma = 0;
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
 
                     fileIn >> lineIn1;
@@ -580,6 +614,8 @@ void AutomaticTests::testTree() {
                 break;
             case 2:
                 suma = 0;
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     tree.add(atoi(lineIn1.c_str()));
@@ -601,6 +637,8 @@ void AutomaticTests::testTree() {
                 break;
             case 3:
                 suma = 0;
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     tree.add(atoi(lineIn1.c_str()));
@@ -619,6 +657,8 @@ void AutomaticTests::testTree() {
                 break;
             case 4:
                 tree.clean();
+                fileIn.clear();
+                fileIn.seekg(0,ios::beg);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     tree.add(atoi(lineIn1.c_str()));

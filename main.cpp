@@ -70,6 +70,8 @@ int main() {
                 else
                     manualTests.testTree();
                 break;
+            case 0:
+                break;
             default:
                 printError("Wybrales zlą opcje. Sprobuj ponownie.");
         }

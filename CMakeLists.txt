@@ -1,8 +1,103 @@
 cmake_minimum_required(VERSION 3.13)
-project(SDiZO_Sliwka)
+project(SDiZO)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(SDiZO_Sliwka main.cpp Timer.cpp Timer.h Array.cpp Array.h ManualTests.cpp ManualTests.h AutomaticTests.cpp AutomaticTests.h ListElement.cpp ListElement.h List.cpp List.h Heap.cpp Heap.h TreeElement.cpp TreeElement.h Tree.cpp Tree.h)
+include_directories(.)
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
+add_executable(SDiZO
+        Data/losowe_100.txt
+        Data/losowe_1000.txt
+        Data/losowe_10000.txt
+        Data/losowe_1500.txt
+        Data/losowe_2000.txt
+        Data/losowe_20000.txt
+        Data/losowe_500.txt
+        Data/losowe_5000.txt
+        Results/Array/100ea.txt
+        Results/Array/100fa.txt
+        Results/Array/100find.txt
+        Results/Array/100ia.txt
+        Results/Array/100rf.txt
+        Results/Array/100ri.txt
+        Results/Array/100rl.txt
+        Results/Array/100show.txt
+        Results/Array/addindex1000.txt
+        Results/Array/addkon1000.txt
+        Results/Array/addpocz1000.txt
+        Results/Array/pokaz1000.txt
+        Results/Array/szukaj1000.txt
+        Results/Array/tablica_dodajNaKoniec_100.txt
+        Results/Array/tablica_dodajNaKoniec_1000.txt
+        Results/Array/tablica_dodajNaPoczatek_100.txt
+        Results/Array/tablica_dodajNaPoczatek_1000.txt
+        Results/Array/tablica_dodajWybrane_100.txt
+        Results/Array/tablica_dodajWybrane_1000.txt
+        Results/Array/tablica_szukaj_100.txt
+        Results/Array/tablica_szukaj_1000.txt
+        Results/Array/tablica_usunKoniec_100.txt
+        Results/Array/tablica_usunKoniec_1000.txt
+        Results/Array/tablica_usunPoczatek_100.txt
+        Results/Array/tablica_usunPoczatek_1000.txt
+        Results/Array/tablica_usunWybrane_100.txt
+        Results/Array/tablica_usunWybrane_1000.txt
+        Results/Array/tablica_wydrukuj_100.txt
+        Results/Array/tablica_wydrukuj_1000.txt
+        Results/Array/usunindex1000.txt
+        Results/Array/usunostratni1000.txt
+        Results/Array/uusnpierwszy1000.txt
+        Results/Heap/0
+        Results/Heap/a
+        Results/Heap/ad1k.txt
+        Results/Heap/add1oo.txt
+        Results/Heap/delete100.txt
+        Results/Heap/find100.txt
+        Results/Heap/find1k.txt
+        Results/Heap/remove1k.txt
+        Results/Heap/show100.txt
+        Results/Heap/show1k.txt
+        Results/List/0
+        Results/List/fa100.txt
+        Results/List/find100.txt
+        Results/List/ia100.txt
+        Results/List/indexdodaj1000.txt
+        Results/List/koniecdodaj1000.txt
+        Results/List/la100.txt
+        Results/List/poczatekdodaj1000.txt
+        Results/List/pokaz1000.txt
+        Results/List/rf100.txt
+        Results/List/ri100.txt
+        Results/List/rl100.txt
+        Results/List/show100.txt
+        Results/List/test.txt
+        Results/List/usunindex1000.txt
+        Results/List/usunostatni1000.txt
+        Results/List/usunpierwszy1000.txt
+        Results/Tree/0
+        Results/Tree/add100.txt
+        Results/Tree/add1k.txt
+        Results/Tree/find100.txt
+        Results/Tree/remove100.txt
+        Results/Tree/remove1k.txt
+        Results/Tree/show100.txt
+        Results/Tree/show1k.txt
+        Results/Tree/szukaj1k.txt
+        Array.cpp
+        Array.h
+        AutomaticTests.cpp
+        AutomaticTests.h
+        Heap.cpp
+        Heap.h
+        List.cpp
+        List.h
+        ListElement.cpp
+        ListElement.h
+        main.cpp
+        ManualTests.cpp
+        ManualTests.h
+        Timer.cpp
+        Timer.h
+        Tree.cpp
+        Tree.h
+        TreeElement.cpp
+        TreeElement.h)
