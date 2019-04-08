@@ -41,10 +41,10 @@ void AutomaticTests::testArray() {
         cout << "Wybieram opcje: ";
         cin >> x;
         cout << "Podaj sciezkie pliku zawierajacego dane wejsciowe: ";
-
+        cin>>pathIn;
         cout << "Podaj miejsce docelowe zapisu wyniku testow: ";
         cin >> pathOut;
-        fileIn.open("../Data/losowe_1000.txt", ios::in);
+        fileIn.open("../Data/"+pathIn, ios::in);
         fileOut.open("../Results/Array/" + pathOut, ios::out);
         if (fileIn.is_open())
             cout << "Pomyslnie otwarto plik wejsciowy" << endl;
@@ -234,10 +234,10 @@ void AutomaticTests::testList() {
         cout << "Wybieram opcje: ";
         cin >> x;
         cout << "Podaj sciezkie pliku zawierajacego dane wejsciowe: ";
-
+        cin>>pathIn;
         cout << "Podaj miejsce docelowe zapisu wyniku testow: ";
         cin >> pathOut;
-        fileIn.open("../Data/losowe_1000.txt", ios::in);
+        fileIn.open("../Data/"+pathIn, ios::in);
         fileOut.open("../Results/List/" + pathOut, ios::out);
         if (fileIn.is_open())
             cout << "Pomyslnie otwarto plik wejsciowy" << endl;
@@ -432,10 +432,10 @@ void AutomaticTests::testHeap() {
         cout << "Wybieram opcje: ";
         cin >> x;
         cout << "Podaj sciezkie pliku zawierajacego dane wejsciowe: ";
-
+        cin>>pathIn;
         cout << "Podaj miejsce docelowe zapisu wyniku testow: ";
         cin >> pathOut;
-        fileIn.open("../Data/losowe_1000.txt", ios::in);
+        fileIn.open("../Data/"+pathIn, ios::in);
         fileOut.open("../Results/Heap/" + pathOut, ios::out);
         if (fileIn.is_open())
             cout << "Pomyslnie otwarto plik wejsciowy" << endl;
@@ -473,7 +473,7 @@ void AutomaticTests::testHeap() {
                     fileIn >> lineIn1;
                     heap.add(atoi(lineIn1.c_str()));
                 }
-                fileIn.open("../Data/losowe_1000.txt", ios::in);
+                fileIn.open("../Data/"+pathIn, ios::in);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     timer.timerStart();
@@ -543,10 +543,10 @@ void AutomaticTests::testTree() {
         cout << "Wybieram opcje: ";
         cin >> x;
         cout << "Podaj sciezkie pliku zawierajacego dane wejsciowe: ";
-
+        cin>>pathIn;
         cout << "Podaj miejsce docelowe zapisu wyniku testow: ";
         cin >> pathOut;
-        fileIn.open("../Data/losowe_1000.txt", ios::in);
+        fileIn.open("../Data/"+pathIn, ios::in);
         fileOut.open("../Results/Tree/" + pathOut, ios::out);
         if (fileIn.is_open())
             cout << "Pomyslnie otwarto plik wejsciowy" << endl;
@@ -585,7 +585,7 @@ void AutomaticTests::testTree() {
                     tree.add(atoi(lineIn1.c_str()));
                 }
                 fileIn.close();
-                fileIn.open("../Data/losowe_1000.txt", ios::in);
+                fileIn.open("../Data/"+pathIn, ios::in);
                 while (!fileIn.eof()) {
                     fileIn >> lineIn1;
                     timer.timerStart();
